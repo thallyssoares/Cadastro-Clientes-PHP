@@ -1,4 +1,9 @@
-3 PRINICPAIS PAGINAS:
-    1 - pagina de login
-    2 - validação do login
-    3 - pagina de cadastro de clientes
+PRINICPAIS PAGINAS:
+    1 - pagina de login (feito)
+    2 - validação do login (feito)
+    3 - pagina de cadastro de clientes 
+
+FUNCIONALIDADES:
+    1 - Cadastro de clientes
+    2 - Deletar cliente
+    3 - Atualizar dados do cliente

@@ -15,6 +15,7 @@
                 session_start();
                 $_SESSION["nome"] = $nome;
                 $_SESSION["senha"] = $senha;
+                $_SESSION["logado"] = true;
                 header("location:clientes_cadastro.php");
 
             } else{
