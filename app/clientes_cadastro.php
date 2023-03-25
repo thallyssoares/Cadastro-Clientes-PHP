@@ -7,6 +7,7 @@
     include_once "../functions/atualizar-dados-cliente.php";
     include_once "../functions/cadastro-cliente.php";
     include_once "../functions/deletar-cliente.php";
+    include_once "../functions/mostrar-clientes.php";
 
     if(!empty($_GET["action"])){
         $action = $_GET["action"];
@@ -45,6 +46,9 @@
                                 <input type="submit" value="Cadastrar">
                         </form>';
                         cadastrarCliente();
+                        break;
+                    case "mostrar":
+                        mostrarClientes();
                         break;
                     case "sair":
                         if(isset ($_SESSION["logado"])){

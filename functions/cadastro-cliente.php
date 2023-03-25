@@ -11,7 +11,7 @@ function cadastrarCliente(){
 
             $fo = fopen($arquivo, "a+");
 
-            $clientes = "nome: $n empresa: $e \r\n";
+            $clientes = "Nome: <strong>$n</strong> Empresa: <strong>$e</strong> \r\n";
             
             fwrite($fo, $clientes);
             fclose($fo);
@@ -21,7 +21,7 @@ function cadastrarCliente(){
 
             $fo = fopen($arquivo, "a+");
 
-            $clientes = "nome: $n empresa: $e \r\n";
+            $clientes = "Nome: <strong>$n</strong> Empresa: <strong>$e</strong> \r\n";
             
             fwrite($fo, $clientes);
             fclose($fo);
