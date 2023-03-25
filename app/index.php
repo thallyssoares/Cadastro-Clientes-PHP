@@ -1,30 +1,42 @@
 <?php 
 
     if(!empty($_POST["name"]) && !empty($_POST["senha"])){
-        
+        /*
         $nLogin = "soares";
         $emailLogin = "soares@gmail.com";
         $sLogin = "alinetja";
-        
+        */
+
+        $login = ["login1"=>[
+            "nome"=>"soares",
+            "email"=>"soares@gmail.com",
+            "senha"=>"alinetja"
+        ], "login2"=>[
+            "nome"=>"thallys",
+            "email"=>"thallys@hotmail.com",
+            "senha"=>"1206"
+        ]];
         $nome = $_POST["name"];
         $senha = $_POST["senha"];
-
-
-        if($nome == $nLogin || $nome == $emailLogin){
-            if($senha == $sLogin){
+        
+        if(($nome == $login["login1"]["nome"] || $nome == $login["login2"]["nome"])|| ($nome == $login["login1"]["email"] || $nome == $login["login2"]["email"])){
+            if(($senha == $login["login1"]["senha"] || $senha == $login["login2"]["senha"])){
+                
                 session_start();
                 $_SESSION["nome"] = $nome;
                 $_SESSION["senha"] = $senha;
                 $_SESSION["logado"] = true;
                 header("location:clientes_cadastro.php");
-
+                
             } else{
                 echo "<p>Senha Incorreta</p>";
             }
         } else{
             echo "<p>Dados de login incorretos</p>";
         }
-    } else{
+    }
+
+     else{
         echo "Preencha todos os campos";
     }
 
