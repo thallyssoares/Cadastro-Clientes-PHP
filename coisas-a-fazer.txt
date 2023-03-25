@@ -1,0 +1,4 @@
+3 PRINICPAIS PAGINAS:
+    1 - pagina de login
+    2 - validação do login
+    3 - pagina de cadastro de clientes
