@@ -10,8 +10,8 @@
                 $newNome = $_POST["newNome"];
                 $antClient = $_POST["antClient"];
 
-                $string = implode(".",$clients); 
-                $newString = explode(".", $string);
+                $string = implode(" ",$clients); 
+                $newString = explode(" ", $string);
 
                 
                 $key = array_search($antClient, $newString);
@@ -23,7 +23,7 @@
                     echo "<p>Não foi possivel encontrar o cliente $antClient na sua base de dados.</p>";
                 }
                 
-                $newString = implode(".", $newString);                
+                $newString = implode(" ", $newString);                
                 unlink($arquivo);
 
                 $fp = fopen($arquivo, "a+");
@@ -36,8 +36,8 @@
                 $newEmp = $_POST["newEmp"];
                 $antEmp = $_POST["antEmp"];
 
-                $string = implode(".",$clients); 
-                $newString = explode(".", $string);
+                $string = implode(" ",$clients); 
+                $newString = explode(" ", $string);
 
                 
                 $key = array_search($antEmp, $newString);
@@ -49,7 +49,7 @@
                     echo "<p>Não foi possivel encontrar a empresa $antEmp na sua base de dados.</p>";
                 }
                 
-                $newString = implode(".", $newString);             
+                $newString = implode(" ", $newString);             
                 unlink($arquivo);
 
                 $fp = fopen($arquivo, "a+");
@@ -65,7 +65,59 @@
 
             $clients = file($arquivo, FILE_SKIP_EMPTY_LINES);
 
-            var_dump($clients[0]);
+            if(isset($_POST["newNome"])){
+                $newNome = $_POST["newNome"];
+                $antClient = $_POST["antClient"];
+
+                $string = implode(" ",$clients); 
+                $newString = explode(" ", $string);
+
+                
+                $key = array_search($antClient, $newString);
+                
+                if($key !== false){
+                    $newString[$key] = $newNome;
+                    echo "<p>Nome modificado com sucesso!!</p>";
+                } else{
+                    echo "<p>Não foi possivel encontrar o cliente $antClient na sua base de dados.</p>";
+                }
+                
+                $newString = implode(" ", $newString);                
+                unlink($arquivo);
+
+                $fp = fopen($arquivo, "a+");
+
+                fwrite($fp, $newString);
+                fclose($fp);
+
+
+            }elseif(isset($_POST["newEmp"])){
+                $newEmp = $_POST["newEmp"];
+                $antEmp = $_POST["antEmp"];
+
+                $string = implode(" ",$clients); 
+                $newString = explode(" ", $string);
+
+                
+                $key = array_search($antEmp, $newString);
+                
+                if($key !== false){
+                    $newString[$key] = $newEmp;
+                    echo "<p>Empresa modificada com sucesso!!</p>";
+                } else{
+                    echo "<p>Não foi possivel encontrar a empresa $antEmp na sua base de dados.</p>";
+                }
+                
+                $newString = implode(" ", $newString);             
+                unlink($arquivo);
+
+                $fp = fopen($arquivo, "a+");
+
+                fwrite($fp, $newString);
+                fclose($fp);
+
+
+            }
         }
     }
 

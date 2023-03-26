@@ -12,10 +12,12 @@
                 while(!feof($fp)){
                     
                     $valor = fgets($fp, 4096);
-                    $nValor = str_replace(".", " ", $valor);
+
                     echo "<ul>
-                        <li>$nValor</li>
-                    </ul>";
+                            <li>$valor</li>
+                        </ul>";
+                    
+                    
                 }
                 
                 

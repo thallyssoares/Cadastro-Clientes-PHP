@@ -5,7 +5,7 @@ PRINICPAIS PAGINAS:
 
 FUNCIONALIDADES:
     1 - Cadastro de clientes (feito)
-    2 - Deletar cliente
+    2 - Deletar cliente (não foi feito por completo)
     3 - Atualizar dados do cliente (feito)
     4 - Mostrar todos os clientes cadastrados (feito)
 
