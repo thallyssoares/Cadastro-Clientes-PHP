@@ -47,6 +47,34 @@
                         </form>';
                         cadastrarCliente();
                         break;
+                    case "atualizar":
+                        echo '<form action="" method="post">
+                            <input type="submit" name="mNome" value="Mudar Nome">
+                            <input type="submit" name="mEmp" value="Mudar Empresa">
+                        </form>';
+                        if(isset($_POST["mNome"]) || isset($_POST["mEmp"])){
+                            
+                            if(!empty($_POST["mNome"])){
+                                echo '<form action="" method="post">
+                                    <label for="antClient">Qual o cliente?</label>
+                                    <input type="text" name="antClient" id="idAntClient">
+                                    <label for="nNome">Insira o novo nome:</label>
+                                    <input type="text" name="newNome" id="idNewNome">
+                                    <input type="submit" value="Atualizar">
+                                </form>';
+                            } elseif(!empty($_POST["mEmp"])){
+                                echo '<form action="" method="post">
+                                    <label for="antEmp">Qual a empresa?</label>
+                                    <input type="text" name="antEmp" id="idAntEmp">
+                                    <label for="nEmp">Insira a nova empresa:</label>
+                                    <input type="text" name="newEmp" id="idNewEmp">
+                                    <input type="submit" value="Atualizar">
+                                </form>';
+                            }
+                            
+                        }
+                        atualizarDados();
+                        break;
                     case "mostrar":
                         mostrarClientes();
                         break;

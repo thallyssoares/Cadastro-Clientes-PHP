@@ -11,17 +11,20 @@ function cadastrarCliente(){
 
             $fo = fopen($arquivo, "a+");
 
-            $clientes = "Nome: <strong>$n</strong> Empresa: <strong>$e</strong> \r\n";
+            $clientes = "Nome:.$n.Empresa:.$e.\r\n";
             
+
             fwrite($fo, $clientes);
             fclose($fo);
+            
 
         } elseif(($_SESSION["nome"] == "thallys" || $_SESSION["nome"] == "thallys@hotmail.com") && $_SESSION["senha"] == "1206"){
             $arquivo = "../arquivos-txt/clientes_Thallys.txt";
 
             $fo = fopen($arquivo, "a+");
 
-            $clientes = "Nome: <strong>$n</strong> Empresa: <strong>$e</strong> \r\n";
+            $clientes = "Nome:.$n.Empresa:.$e.\r\n";
+            
             
             fwrite($fo, $clientes);
             fclose($fo);

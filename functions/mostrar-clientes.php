@@ -10,9 +10,11 @@
                 
                 echo "<p>Estes são seus clientes</p>";
                 while(!feof($fp)){
+                    
                     $valor = fgets($fp, 4096);
+                    $nValor = str_replace(".", " ", $valor);
                     echo "<ul>
-                        <li>$valor</li>
+                        <li>$nValor</li>
                     </ul>";
                 }
                 
@@ -33,8 +35,9 @@
                 echo "<p>Estes são seus clientes</p>";
                 while(!feof($fp)){
                     $valor = fgets($fp, 4096);
+                    $nValor = str_replace(".", " ", $valor);
                     echo "<ul>
-                        <li>$valor</li>
+                        <li>$nValor</li>
                     </ul>";
                 }
                 
