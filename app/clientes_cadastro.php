@@ -47,6 +47,14 @@
                         </form>';
                         cadastrarCliente();
                         break;
+                    case "deletar":
+                        echo '<form action="" method="post">
+                            <label>Qual o cliente gostaria de deletar?</label>
+                            <input type="text" name="nomeCliente" id="idNomeCliente">
+                            <input type="submit" value="Deletar">
+                        </form>';
+                        deletarCliente();
+                        break;
                     case "atualizar":
                         echo '<form action="" method="post">
                             <input type="submit" name="mNome" value="Mudar Nome">
