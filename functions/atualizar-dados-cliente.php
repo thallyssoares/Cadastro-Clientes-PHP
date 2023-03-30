@@ -69,7 +69,10 @@
                 $newNome = $_POST["newNome"];
                 $antClient = $_POST["antClient"];
 
+                //trasnformando o array em string
                 $string = implode(" ",$clients); 
+
+                //transformando a string em array
                 $newString = explode(" ", $string);
 
                 
