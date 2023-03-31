@@ -26,17 +26,17 @@
 <body>
     <main>
         <ul>
-            <li><a href="clientes_cadastro.php?action=cadastro">Cadastrar Clientes</a></li>
-            <li><a href="clientes_cadastro.php?action=deletar">Deletar Cliente</a></li>
-            <li><a href="clientes_cadastro.php?action=atualizar">Atualizar Cliente</a></li>
-            <li><a href="clientes_cadastro.php?action=mostrar">Mostrar Clientes</a></li>
-            <li><a href="clientes_cadastro.php?action=sair">Sair da Conta</a></li>
+            <li><a href="admin_painel.php?action=cadastro">Cadastrar Clientes</a></li>
+            <li><a href="admin_painel.php?action=deletar">Deletar Cliente</a></li>
+            <li><a href="admin_painel.php?action=atualizar">Atualizar Cliente</a></li>
+            <li><a href="admin_painel.php?action=mostrar">Mostrar Clientes</a></li>
+            <li><a href="admin_painel.php?action=sair">Sair da Conta</a></li>
             
-        </ul>
-        <?php
-            if(!empty($_GET["action"])){
-                switch($action){
-                    case "cadastro":
+        </ul>    
+        <?php    
+            if(!empty($_GET["action"])){    
+                switch($action){    
+                    case "cadastro":    
                         echo '<form action="" method="post">
                                 <label for="nome">Nome do Cliente:</label>
                                 <input type="text" name="nome" id="idNome">

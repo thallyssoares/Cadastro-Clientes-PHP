@@ -1,41 +1,55 @@
 <?php 
 
     function atualizarDados(){
-        if(($_SESSION["nome"]=="soares" || $_SESSION["nome"]=="soares@gmail.com") && $_SESSION["senha"]=="alinetja"){
-            $arquivo = "../arquivos-txt/clientes_Soares.txt";
+
+
+            $arquivo = "../arquivos-txt/clientes_".$_SESSION["nome"].".txt";
 
             $clients = file($arquivo, FILE_SKIP_EMPTY_LINES);
+
+            //verifica se o cliente quer mudar o nome ou a empresa do cliente
 
             if(isset($_POST["newNome"])){
                 $newNome = $_POST["newNome"];
                 $antClient = $_POST["antClient"];
 
+                //transforma o array dos clientes em string
                 $string = implode(" ",$clients); 
+
+                //transforma a string em array novamente, mas separado corretamente pra facilitar a validação
                 $newString = explode(" ", $string);
 
                 
                 $key = array_search($antClient, $newString);
-                
+
+                //procura pelo valor anterior no array
+                //se o valor existir ele faz a mudança
+                //senao ele diz que não foi possivel achar o cliente
                 if($key !== false){
                     $newString[$key] = $newNome;
                     echo "<p>Nome modificado com sucesso!!</p>";
+
+                    //aqui o arquivo é atualizado e reescrito com o novo valor
+                    $newString = implode(" ", $newString);                
+                    //pra facilitar o trabnalho, resolvi apagar o arquivo e escrever ele novamente
+                    unlink($arquivo);
+
+                    $fp = fopen($arquivo, "a+");
+
+                    fwrite($fp, $newString);
+                    fclose($fp);
+
                 } else{
                     echo "<p>Não foi possivel encontrar o cliente $antClient na sua base de dados.</p>";
                 }
                 
-                $newString = implode(" ", $newString);                
-                unlink($arquivo);
-
-                $fp = fopen($arquivo, "a+");
-
-                fwrite($fp, $newString);
-                fclose($fp);
 
 
             }elseif(isset($_POST["newEmp"])){
                 $newEmp = $_POST["newEmp"];
                 $antEmp = $_POST["antEmp"];
 
+                //funciona igual a mudança do nome do cliente, mas nesse caso é com o nome da empresa
                 $string = implode(" ",$clients); 
                 $newString = explode(" ", $string);
 
@@ -60,69 +74,7 @@
 
             }
 
-        }elseif(($_SESSION["nome"]=="thallys" || $_SESSION["nome"]=="thallys@hotmail.com") && $_SESSION["senha"]=="1206"){
-            $arquivo = "../arquivos-txt/clientes_Thallys.txt";
-
-            $clients = file($arquivo, FILE_SKIP_EMPTY_LINES);
-
-            if(isset($_POST["newNome"])){
-                $newNome = $_POST["newNome"];
-                $antClient = $_POST["antClient"];
-
-                //trasnformando o array em string
-                $string = implode(" ",$clients); 
-
-                //transformando a string em array
-                $newString = explode(" ", $string);
-
-                
-                $key = array_search($antClient, $newString);
-                
-                if($key !== false){
-                    $newString[$key] = $newNome;
-                    echo "<p>Nome modificado com sucesso!!</p>";
-                } else{
-                    echo "<p>Não foi possivel encontrar o cliente $antClient na sua base de dados.</p>";
-                }
-                
-                $newString = implode(" ", $newString);                
-                unlink($arquivo);
-
-                $fp = fopen($arquivo, "a+");
-
-                fwrite($fp, $newString);
-                fclose($fp);
-
-
-            }elseif(isset($_POST["newEmp"])){
-                $newEmp = $_POST["newEmp"];
-                $antEmp = $_POST["antEmp"];
-
-                $string = implode(" ",$clients); 
-                $newString = explode(" ", $string);
-
-                
-                $key = array_search($antEmp, $newString);
-                
-                if($key !== false){
-                    $newString[$key] = $newEmp;
-                    echo "<p>Empresa modificada com sucesso!!</p>";
-                } else{
-                    echo "<p>Não foi possivel encontrar a empresa $antEmp na sua base de dados.</p>";
-                }
-                
-                $newString = implode(" ", $newString);             
-                unlink($arquivo);
-
-                $fp = fopen($arquivo, "a+");
-
-                fwrite($fp, $newString);
-                fclose($fp);
-
-
-            }
         }
-    }
 
 
 

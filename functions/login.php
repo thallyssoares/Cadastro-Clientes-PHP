@@ -13,14 +13,15 @@
         $n = ltrim(rtrim($arrayLogin[5]));
 
         $arrayLogin[5] = $n;
-
+        
+        //verificando se o usuario existe na base de usuarios
         if(in_array($senha, $arrayLogin) && in_array($user, $arrayLogin)){
             
             //criando a sessão do usuario
             session_start();
             $_SESSION["nome"] = $user;
             $_SESSION["senha"] = $senha;
-            $_SESSION["logado"] = true;
+            $_SESSION["logado"] = true;            
             
             //transferindo o usuario pro painel administrativo
             header("location:admin_painel.php");

@@ -4,117 +4,72 @@
         if(!empty($_POST["nomeCliente"])){
             $nomeCliente = $_POST["nomeCliente"];
 
-            if(($_SESSION["nome"]=="soares" || $_SESSION["nome"]=="soares@gmail.com") && $_SESSION["senha"]=="alinetja"){
-                if($nomeCliente == "todos" || $nomeCliente == "Todos" || $nomeCliente == "TODOS"){
-                    $arquivo = "../arquivos-txt/clientes_Soares.txt";
-                    $clients = file($arquivo, FILE_SKIP_EMPTY_LINES);
+            //caso o usuario queira apagar todos os clientes basta digitar "todos"
+            //esse codigo zera o arquivo com os clientes do usuario respectivo.
 
-                    $string = implode(" ",$clients); 
-                    $newStringArray = explode(" ", $string);
-                    
-                    $array = [];
-                    $clearArray = array_diff($array, $newStringArray);
-                    
-                    
-                    $newString = implode(" ", $clearArray);                
-                    unlink($arquivo);
-
-                    $fp = fopen($arquivo, "a+");
-
-                    fwrite($fp, $newString);
-                    fclose($fp);
-
-                    echo "<p>Todos os clientes deletados</p>";
-                    
-                }else{
-
-                
-                    $arquivo = "../arquivos-txt/clientes_Soares.txt";
-                    $clients = file($arquivo, FILE_SKIP_EMPTY_LINES);
-
-                    $string = implode(" ",$clients); 
-                    $newStringArray = explode(" ", $string);
-
-                    $key = array_search($nomeCliente, $newStringArray);
-
-                    if($key !== false){
-                        unset($newStringArray[$key-1]); 
-                        unset($newStringArray[$key]); 
-                        unset($newStringArray[$key+1]); 
-                        unset($newStringArray[$key+2]);
-    
-                        $newString = implode(" ", $newStringArray);                
-                        
-                        unlink($arquivo);
-
-                        $fp = fopen($arquivo, "a+");
-                        fwrite($fp, $newString);
-                        fclose($fp); 
-                        
-                        
-                        echo "<p>Cliente deletado com sucesso!!</p>";
-
-                    } else {
-                        echo "<p>Não foi possivel encontrar o cliente</p>";
-                    }
-                }
-
-            } elseif(($_SESSION["nome"]=="thallys" || $_SESSION["nome"]=="thallys@hotmail.com") && $_SESSION["senha"]=="1206"){
-                $arquivo = "../arquivos-txt/clientes_Thallys.txt";
+            if($nomeCliente == "todos" || $nomeCliente == "Todos" || $nomeCliente == "TODOS"){
+                $arquivo = "../arquivos-txt/clientes_". $_SESSION["name"] .".txt";
                 $clients = file($arquivo, FILE_SKIP_EMPTY_LINES);
 
-                if($nomeCliente == "todos" || $nomeCliente == "Todos" || $nomeCliente == "TODOS"){
-                    $string = implode(" ",$clients); 
-                    $newStringArray = explode(" ", $string);
+                $string = implode(" ",$clients); 
+                $newStringArray = explode(" ", $string);
+                
+                $array = [];
+                $clearArray = array_diff($array, $newStringArray);
+                
+                
+                
+                $newString = implode(" ", $clearArray);                
+                unlink($arquivo);
+
+                $fp = fopen($arquivo, "a+");
+
+                fwrite($fp, $newString);
+                fclose($fp);
+
+                echo "<p>Todos os clientes deletados</p>";
+                
+            }else{
+                //aqui ele apaga um cliente especifico
+            
+                $arquivo = "../arquivos-txt/clientes_". $_SESSION["nome"] . ".txt";
+                $clients = file($arquivo, FILE_SKIP_EMPTY_LINES);
+
+                $string = implode(" ",$clients); 
+                $newStringArray = explode(" ", $string);
+
+                $key = array_search($nomeCliente, $newStringArray);
+
+                if($key !== false){
+
+                    //codigo pra apagar o todos os dados do cliente.
+
+                    unset($newStringArray[$key-1]); 
+                    unset($newStringArray[$key]); 
+                    unset($newStringArray[$key+1]); 
+                    unset($newStringArray[$key+2]);
                     
-                    $array = [];
-                    $clearArray = array_diff($array, $newStringArray);
-                    
-                    
-                    $newString = implode(" ", $clearArray);                
+                
+                    $newString = implode(" ", $newStringArray);                
+                    $nString = ltrim(rtrim($newString));
                     unlink($arquivo);
 
                     $fp = fopen($arquivo, "a+");
-
-                    fwrite($fp, $newString);
-                    fclose($fp);
-
-                    echo "<p>Todos os clientes deletados</p>";
+                    fwrite($fp, $nString);
+                    fclose($fp); 
                     
-                }else{
+                    
+                    echo "<p>Cliente deletado com sucesso!!</p>";
 
-                
-                    $arquivo = "../arquivos-txt/clientes_Soares.txt";
-                    $clients = file($arquivo, FILE_SKIP_EMPTY_LINES);
-
-                    $string = implode(" ",$clients); 
-                    $newStringArray = explode(" ", $string);
-
-                    $key = array_search($nomeCliente, $newStringArray);
-
-                    if($key !== false){
-                        unset($newStringArray[$key-1]); 
-                        unset($newStringArray[$key]); 
-                        unset($newStringArray[$key+1]); 
-                        unset($newStringArray[$key+2]);
-    
-                        $newString = implode(" ", $newStringArray);                
-                        
-                        unlink($arquivo);
-
-                        $fp = fopen($arquivo, "a+");
-                        fwrite($fp, $newString);
-                        fclose($fp); 
-                        
-                        
-                        echo "<p>Cliente deletado com sucesso!!</p>";
-
-                    } else {
-                        echo "<p>Não foi possivel encontrar o cliente</p>";
-                    }
-
+                } else {
+                    echo "<p>Não foi possivel encontrar o cliente</p>";
+                }
             }
-        }
+
+        
+
+        
+        
     }
 }
 

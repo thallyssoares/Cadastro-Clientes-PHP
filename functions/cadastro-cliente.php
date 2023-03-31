@@ -1,36 +1,22 @@
 <?php 
 
 function cadastrarCliente(){
+    //verifica se os metodos não estão vazios, se não estiver ele cadastra o cliente no arquivo respectivo
     if(!empty($_POST["nome"]) && !empty($_POST["emp"])){
         $n = $_POST["nome"];
         $e = $_POST["emp"];
 
-        if(($_SESSION["nome"] == "soares" || $_SESSION["nome"] == "soares@gmail.com") && $_SESSION["senha"] == "alinetja"){
+        $arquivo = "../arquivos-txt/clientes_". $_SESSION["nome"] . ".txt";
 
-            $arquivo = "../arquivos-txt/clientes_Soares.txt";
+        $fo = fopen($arquivo, "a+");
 
-            $fo = fopen($arquivo, "a+");
+        $clientes = "Nome: $n Empresa: $e \r\n";
+        
 
-            $clientes = "Nome: $n Empresa: $e \r\n";
-            
+        fwrite($fo, $clientes);
+        fclose($fo);
+        
 
-            fwrite($fo, $clientes);
-            fclose($fo);
-            
-
-        } elseif(($_SESSION["nome"] == "thallys" || $_SESSION["nome"] == "thallys@hotmail.com") && $_SESSION["senha"] == "1206"){
-            $arquivo = "../arquivos-txt/clientes_Thallys.txt";
-
-            $fo = fopen($arquivo, "a+");
-
-            $clientes = "Nome: $n Empresa: $e \r\n";
-            
-            
-            fwrite($fo, $clientes);
-            fclose($fo);
-        }
-
-        echo "Cliente: $n da empresa $e, cadastrado com sucesso";
     }
 }
 
