@@ -1,5 +1,5 @@
 <?php 
-    include_once "../functions/new_user.php";
+    require_once "../classes/users.php";
     
 ?>
 
@@ -31,12 +31,16 @@
 
         <?php 
             if(!empty($_POST["user"]) && !empty($_POST["email"]) && !empty($_POST["senha"])){
-                echo "<p>Logado</p>";
+                $usr = new Users;
+                $usr->setNewUser($_POST["user"], $_POST["email"], $_POST["senha"]);
+
             } else{
                 echo "<p>Preencha todos os campos</p>";
             }
         
         ?>
+
+        <a href="index.php">Retornar a Pagina de Login</a>
     </main>
 </body>
 </html>

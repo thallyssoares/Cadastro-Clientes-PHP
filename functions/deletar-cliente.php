@@ -42,7 +42,7 @@
 
                 if($key !== false){
 
-                    //codigo pra apagar o todos os dados do cliente.
+                    //codigo pra apagar todos os dados do cliente.
 
                     unset($newStringArray[$key-1]); 
                     unset($newStringArray[$key]); 
@@ -50,13 +50,13 @@
                     unset($newStringArray[$key+2]);
                     
                 
-                    $newString = implode(" ", $newStringArray);                
-                    $nString = ltrim(rtrim($newString));
+                    $newString = implode(" ", $newStringArray);                       
                     unlink($arquivo);
 
                     $fp = fopen($arquivo, "a+");
-                    fwrite($fp, $nString);
-                    fclose($fp); 
+                    fwrite($fp, $newString);
+                    fclose($fp);
+                    
                     
                     
                     echo "<p>Cliente deletado com sucesso!!</p>";

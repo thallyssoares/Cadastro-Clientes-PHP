@@ -16,8 +16,7 @@
   ..* Clone o repositorio pra sua maquina.
   ..* Acesse seu localhost, na pasta onde clonou o repositorio.
   ..* Acesse **app/**.
-  ..* Faça login com um dos dois usuarios disponiveis. 
-  > (Você pode encontrar os dados no codigo na pagina index.php. **Obs.:** Logo sera disponivel criar novos usuarios.)
+  ..* Faça login ou crie um usuario pra logar.
   ..* Pronto, pode ficar a vontade pra testar toda a aplicação.
 
 

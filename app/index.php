@@ -1,9 +1,11 @@
 <?php 
-    include_once "../functions/login.php";
+    require_once "../classes/users.php";
 
     if(!empty($_POST["name"]) && !empty($_POST["senha"])){
         
-        login($_POST["name"], $_POST["senha"]);
+        $usr = new Users();
+
+        $usr->loginUser($_POST["name"], $_POST["senha"]);
     }
 
      else{
