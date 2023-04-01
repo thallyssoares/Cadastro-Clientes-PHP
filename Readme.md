@@ -1,7 +1,8 @@
 # Pagina de Cadastro de Clientes v1.0  
 
+![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![image](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 
-## Sobre o Projeto  ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![image](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+## Sobre o Projeto  
 
  Esse projeto tem como objetivo testar meus conhecimentos em **PHP** puro. Me desafiei a criar um painel de cadastro de clientes, mas sem usar Banco de Dados. Dessa forma trabalhei muito com manipulção de arquivos **.TXT**.  
 
@@ -10,6 +11,10 @@
 
 
  Apesar de simples o projeto, serviu muito pro desenvolvimento da minha logica. Pude tambem ter contato com um sistema de **CRUD** bem basico.  
+
+ ### Ajuste e Melhorias
+ ..* Melhoria na estilização do site.
+ 
 
 
 ## Sobre a Aplicação
