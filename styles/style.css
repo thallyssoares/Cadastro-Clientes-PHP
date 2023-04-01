@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --color1: #2e664e;
+    --color2: #afead0;
+    --color3: #67e6af;
+    --color4: #4d665B;
+    --color5: #51b388;  
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color2);
+    display: flex;
+    
+}
+
+main{
+    display: flex;
+}
