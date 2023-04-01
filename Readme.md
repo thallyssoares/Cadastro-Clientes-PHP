@@ -12,13 +12,19 @@
 
  Apesar de simples o projeto, serviu muito pro desenvolvimento da minha logica. Pude tambem ter contato com um sistema de **CRUD** bem basico.  
 
+ ### Sobre a Aplicação
+  A aplicação consiste em um site de cadastro de clientes, em que você pode cadastrar um cliente, pode atualizar os dados do cliente, pode deletar esse cliente e pode tambem mostrar todos os clientes cadastrados.
+
+
  ### Ajuste e Melhorias
  ..* Melhoria na estilização do site.
  
+## 💻 Pré-requisitos
 
-
-## Sobre a Aplicação
-  A aplicação consiste em um site de cadastro de clientes, em que você pode cadastrar um cliente, pode atualizar os dados do cliente, pode deletar esse cliente e pode tambem mostrar todos os clientes cadastrados.
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+* Você instalou a versão mais recente do `PHP`
+* Você tem uma máquina `Windows, Linux ou Mac`.
+* Você tem um navegador.
 
 
 ## Como Testar
@@ -27,11 +33,4 @@
   ..* Acesse **app/**.
   ..* Faça login ou crie um usuario pra logar.
   ..* Pronto, pode ficar a vontade pra testar toda a aplicação.
-
-
-## Requisitos  
-
-1.PHP 8.2;  
-
-2.APACHE Correspondente.  
 
