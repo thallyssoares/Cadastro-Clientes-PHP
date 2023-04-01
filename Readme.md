@@ -17,7 +17,7 @@
 
 
  ### Ajuste e Melhorias
- ..* Melhoria na estilização do site.
+ * Melhoria na estilização do site.
  
 ## 💻 Pré-requisitos
 
@@ -28,9 +28,17 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 
 ## Como Testar
-  ..* Clone o repositorio pra sua maquina.
-  ..* Acesse seu localhost, na pasta onde clonou o repositorio.
-  ..* Acesse **app/**.
-  ..* Faça login ou crie um usuario pra logar.
-  ..* Pronto, pode ficar a vontade pra testar toda a aplicação.
+  * Clone o repositorio pra sua maquina.
+
+
+  * Acesse seu localhost, na pasta onde clonou o repositorio.
+  
+  
+  * Acesse **app/**.
+  
+  
+  * Faça login ou crie um usuario pra logar.
+  
+  
+  * Pronto, pode ficar a vontade pra testar toda a aplicação.
 
