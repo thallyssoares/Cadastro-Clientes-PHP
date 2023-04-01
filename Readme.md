@@ -1,7 +1,7 @@
 # Pagina de Cadastro de Clientes v1.0  
 
 
-## Sobre o Projeto  
+## Sobre o Projeto  ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![image](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 
  Esse projeto tem como objetivo testar meus conhecimentos em **PHP** puro. Me desafiei a criar um painel de cadastro de clientes, mas sem usar Banco de Dados. Dessa forma trabalhei muito com manipulção de arquivos **.TXT**.  
 
@@ -10,6 +10,10 @@
 
 
  Apesar de simples o projeto, serviu muito pro desenvolvimento da minha logica. Pude tambem ter contato com um sistema de **CRUD** bem basico.  
+
+
+## Sobre a Aplicação
+  A aplicação consiste em um site de cadastro de clientes, em que você pode cadastrar um cliente, pode atualizar os dados do cliente, pode deletar esse cliente e pode tambem mostrar todos os clientes cadastrados.
 
 
 ## Como Testar
