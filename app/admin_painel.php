@@ -21,18 +21,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Logado</title>
 </head>
 <body>
+    <header>
+        <nav>   
+            <ul class="navBar">
+                <li><a href="admin_painel.php?action=cadastro">Cadastrar Clientes</a></li>
+                <li><a href="admin_painel.php?action=deletar">Deletar Cliente</a></li>
+                <li><a href="admin_painel.php?action=atualizar">Atualizar Cliente</a></li>
+                <li><a href="admin_painel.php?action=mostrar">Mostrar Clientes</a></li>
+                <li><a href="admin_painel.php?action=sair">Sair da Conta</a></li>
+                
+            </ul>
+        </nav>    
+    </header>
     <main>
-        <ul>
-            <li><a href="admin_painel.php?action=cadastro">Cadastrar Clientes</a></li>
-            <li><a href="admin_painel.php?action=deletar">Deletar Cliente</a></li>
-            <li><a href="admin_painel.php?action=atualizar">Atualizar Cliente</a></li>
-            <li><a href="admin_painel.php?action=mostrar">Mostrar Clientes</a></li>
-            <li><a href="admin_painel.php?action=sair">Sair da Conta</a></li>
-            
-        </ul>    
         <?php    
             if(!empty($_GET["action"])){    
                 switch($action){    

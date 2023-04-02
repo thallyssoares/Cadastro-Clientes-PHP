@@ -87,3 +87,22 @@ a:visited{
 .buttonArea > input {
     cursor: pointer;
 }
+
+.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    background-color: black;
+
+}
+ 
+.navBar > li {
+    float: left;
+}
+
+.navBar li > a {
+    display: block;
+    padding: 8px;
+    
+}
