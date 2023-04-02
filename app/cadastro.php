@@ -10,23 +10,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Cadastro</title>
 </head>
 <body>
     <main>
-        <h1>Cadastro novo usuario</h1>
+        <h1 class="cadH1">Cadastro novo usuario</h1>
         <form action="" method="post">
-            <label for="name">Nome de usuario</label>
+            <div class="nameArea">
+            <label for="name">Usuario:</label>
             <input type="text" name="user" id="idUser">
+            </div>
             <br>
-            <label for="email">Email</label>
+            <div class="emailArea">
+            <label for="email">Email:</label>
             <input type="text" name="email" id="idEmail">
+            </div>
             <br>
-            <label for="senha">Senha</label>
+            <div class="senhaArea">
+            <label for="senha">Senha:</label>
             <input type="password" name="senha" id="idSenha">
+            </div>
             <br>
+            <div class="buttonArea">
             <input type="submit" value="Cadastrar">
-
+            <button><a href="index.php">Voltar</a></button>
+            </div>
         </form>
 
         <?php 
@@ -40,7 +49,6 @@
         
         ?>
 
-        <a href="index.php">Retornar a Pagina de Login</a>
     </main>
 </body>
 </html>
