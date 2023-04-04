@@ -26,62 +26,79 @@
 </head>
 <body>
     <header>
-        <nav>   
-            <ul class="navBar">
-                <li><a href="admin_painel.php?action=cadastro">Cadastrar Clientes</a></li>
-                <li><a href="admin_painel.php?action=deletar">Deletar Cliente</a></li>
-                <li><a href="admin_painel.php?action=atualizar">Atualizar Cliente</a></li>
-                <li><a href="admin_painel.php?action=mostrar">Mostrar Clientes</a></li>
-                <li><a href="admin_painel.php?action=sair">Sair da Conta</a></li>
-                
-            </ul>
+        <h1>Painel Administrativo</h1>
+        <nav>               
+            <a href="admin_painel.php?action=cadastro">Cadastrar Clientes</a>
+            <a href="admin_painel.php?action=deletar">Deletar Cliente</a>
+            <a href="admin_painel.php?action=atualizar">Atualizar Cliente</a>
+            <a href="admin_painel.php?action=mostrar">Mostrar Clientes</a>
+            <a href="admin_painel.php?action=sair">Sair da Conta</a>
         </nav>    
     </header>
-    <main>
+    <main class="mainPainel">
         <?php    
             if(!empty($_GET["action"])){    
                 switch($action){    
                     case "cadastro":    
                         echo '<form action="" method="post">
+                                <div class="nameArea">
                                 <label for="nome">Nome do Cliente:</label>
                                 <input type="text" name="nome" id="idNome">
+                                </div>
+                                <div class="empArea">
                                 <label for"emp">Empresa:</label>
                                 <input type="text" name="emp" id="idEmp">
-    
+                                </div>
+                                <div class="buttonArea">
                                 <input type="submit" value="Cadastrar">
+                                </div>
                         </form>';
                         cadastrarCliente();
                         break;
                     case "deletar":
                         echo '<form action="" method="post">
-                            <label>Qual o cliente gostaria de deletar?</label>
+                            <div class="nameAreaDelet">
+                            <label>Qual o cliente gostaria de deletar?</label><br>
                             <input type="text" name="nomeCliente" id="idNomeCliente">
+                            </div>
+                            <div class="buttonArea">
                             <input type="submit" value="Deletar">
+                            </div>
                         </form>';
                         deletarCliente();
                         break;
                     case "atualizar":
                         echo '<form action="" method="post">
+                            <div class="buttonAreaAtual">
                             <input type="submit" name="mNome" value="Mudar Nome">
                             <input type="submit" name="mEmp" value="Mudar Empresa">
+                            </div>
                         </form>';
                         if(isset($_POST["mNome"]) || isset($_POST["mEmp"])){
                             
                             if(!empty($_POST["mNome"])){
                                 echo '<form action="" method="post">
+                                    <div class="nameArea">
                                     <label for="antClient">Qual o cliente?</label>
                                     <input type="text" name="antClient" id="idAntClient">
                                     <label for="nNome">Insira o novo nome:</label>
                                     <input type="text" name="newNome" id="idNewNome">
+                                    </div>
+                                    <div class="buttonArea">
                                     <input type="submit" value="Atualizar">
+                                    </div>
                                 </form>';
                             } elseif(!empty($_POST["mEmp"])){
                                 echo '<form action="" method="post">
+                                    <div class="empArea">
                                     <label for="antEmp">Qual a empresa?</label>
                                     <input type="text" name="antEmp" id="idAntEmp">
                                     <label for="nEmp">Insira a nova empresa:</label>
                                     <input type="text" name="newEmp" id="idNewEmp">
+                                    </div>
+                                    <div class="buttonArea">
                                     <input type="submit" value="Atualizar">
+                                    </div>
                                 </form>';
                             }
                             

@@ -10,14 +10,14 @@
             } else{
                 $fp = fopen($arquivo, "r");
                 
-                echo "<p>Estes são seus clientes</p>";
+                echo "<p>Estes são seus clientes:</p>";
                 while(!feof($fp)){
                     
                     $valor = fgets($fp, 4096);
 
-                    echo "<ul>
-                            <li>$valor</li>
-                        </ul>";
+                    echo '<ul class="mostClient">
+                            <li>'. $valor . '</li>
+                        </ul>';
                     
                     
                 }
