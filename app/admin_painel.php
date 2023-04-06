@@ -28,11 +28,18 @@
     <header>
         <h1>Painel Administrativo</h1>
         <nav>               
-            <a href="admin_painel.php?action=cadastro">Cadastrar Clientes</a>
-            <a href="admin_painel.php?action=deletar">Deletar Cliente</a>
-            <a href="admin_painel.php?action=atualizar">Atualizar Cliente</a>
-            <a href="admin_painel.php?action=mostrar">Mostrar Clientes</a>
-            <a href="admin_painel.php?action=sair">Sair da Conta</a>
+            <a href="admin_painel.php?action=cadastro" class="largeMenu">Cadastrar Cliente</a>
+            <a href="admin_painel.php?action=deletar" class="largeMenu">Deletar Cliente</a>
+            <a href="admin_painel.php?action=atualizar" class="largeMenu">Atualizar Cliente</a>
+            <a href="admin_painel.php?action=mostrar" class="largeMenu">Mostrar Clientes</a>
+            <a href="admin_painel.php?action=sair" class="largeMenu">Sair da Conta</a>
+            <div id="shortMenu">
+                <a href="admin_painel.php?action=cadastro">Cadastrar</a>
+                <a href="admin_painel.php?action=deletar">Deletar</a>
+                <a href="admin_painel.php?action=atualizar">Atualizar</a>
+                <a href="admin_painel.php?action=mostrar">Mostrar</a>
+                <a href="admin_painel.php?action=sair">Sair</a>
+            </div>    
         </nav>    
     </header>
     <main class="mainPainel">
@@ -80,7 +87,7 @@
                                 echo '<form action="" method="post">
                                     <div class="nameArea">
                                     <label for="antClient">Qual o cliente?</label>
-                                    <input type="text" name="antClient" id="idAntClient">
+                                    <input type="text" name="antClient" id="idAntClient"><br>
                                     <label for="nNome">Insira o novo nome:</label>
                                     <input type="text" name="newNome" id="idNewNome">
                                     </div>
@@ -92,7 +99,7 @@
                                 echo '<form action="" method="post">
                                     <div class="empArea">
                                     <label for="antEmp">Qual a empresa?</label>
-                                    <input type="text" name="antEmp" id="idAntEmp">
+                                    <input type="text" name="antEmp" id="idAntEmp"><br>
                                     <label for="nEmp">Insira a nova empresa:</label>
                                     <input type="text" name="newEmp" id="idNewEmp">
                                     </div>
