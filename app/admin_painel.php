@@ -33,7 +33,7 @@
             <a href="admin_painel.php?action=atualizar" class="largeMenu">Atualizar Cliente</a>
             <a href="admin_painel.php?action=mostrar" class="largeMenu">Mostrar Clientes</a>
             <a href="admin_painel.php?action=sair" class="largeMenu">Sair da Conta</a>
-            <div id="shortMenu">
+            <div class="shortMenu">
                 <a href="admin_painel.php?action=cadastro">Cadastrar</a>
                 <a href="admin_painel.php?action=deletar">Deletar</a>
                 <a href="admin_painel.php?action=atualizar">Atualizar</a>
